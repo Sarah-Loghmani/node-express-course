@@ -1,3 +1,6 @@
+//   ! if we have a function in a module where the function is effectively executed we only need to import meaning require in a module where the function is effectively executed
+require("./db/connect");
+
 const express = require("express");
 const app = express();
 const tasks = require("./routes/tasks");
