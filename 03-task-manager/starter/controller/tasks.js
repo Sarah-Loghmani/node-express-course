@@ -3,7 +3,8 @@ const getAllTasks = (req, res) => {
 };
 
 const getTask = (req, res) => {
-  res.send("Get single task");
+  console.log(req.params); //{ id: 'harchi' }
+  res.json({ id: req.params.id });
 };
 
 const createTask = (req, res) => {
