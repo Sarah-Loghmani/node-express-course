@@ -27,3 +27,7 @@ Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.c
 10. E-Commerce API
 11. Auth Workflow (verify email, reset password)
 12. Sessions
+
+MongoDB DataBase user :
+[userName :john]
+[password: 1234]
