@@ -1,9 +1,11 @@
 //   ! if we have a function in a module where the function is effectively executed we only need to import meaning require in a module where the function is effectively executed
-require("./db/connect");
+//! require("./db/connect");
 
 const express = require("express");
 const app = express();
 const tasks = require("./routes/tasks");
+const connectDB = require("./db/connect");
+require("dotenv").config();
 
 //Middleware for accessing the data
 app.use(express.json());
@@ -23,4 +25,14 @@ app.use("/api/v1/tasks", tasks);
 
 const PORT = 3000;
 
-app.listen(PORT, console.log(`Server is listen on port ${PORT}`));
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URI);
+    //if the connection is be successful then:
+    app.listen(PORT, console.log(`Server is listen on port ${PORT}`));
+    //else:
+  } catch (error) {
+    console.log(error);
+  }
+};
+start();
