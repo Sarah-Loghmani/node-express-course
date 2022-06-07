@@ -33,7 +33,6 @@ const getTask = async (req, res) => {
   }
 };
 
-
 //deleteTask
 const deleteTask = async (req, res) => {
   try {
